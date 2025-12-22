@@ -92,6 +92,9 @@ public class BiomeManagerImpl {
 
     private static void onBootstrapTags(TagBootstrapContext<Biome> biomeTagBootstrapContext) {
         final BiomeBootstrapContextImpl context = initContext(null);
+        // Context is null during datapack reload since the full bootstrap doesn't run, only tags
+        if (context == null) return;
+        
         context.prepareTags(biomeTagBootstrapContext);
 
         //preparing tags is the last step of the bootstrap process, when we are done
