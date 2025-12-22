@@ -261,7 +261,7 @@ public class WoverBiomeData extends BiomeData {
     }
 
     public BiomeData getParentData() {
-        if (edgeData == null) return null;
+        if (parentData == null) return null;
         final Registry<BiomeData> reg = getDataRegistry("parent biome", biomeKey);
         return reg.get(parentData);
     }
